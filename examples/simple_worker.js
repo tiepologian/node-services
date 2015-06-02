@@ -2,7 +2,7 @@
 
 // worker
 var services = require('node-services'),
-    worker = services.createWorker({name: "Square root", host: "localhost", port: 5433, workers: 2});
+    worker = services.createWorker({name: "Square root", host: "127.0.0.1", port: 5433, workers: 2});
 
 worker.pre(function() {
     // load bulky modules here or do heavy initialization work
