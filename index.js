@@ -65,7 +65,9 @@ Worker.prototype.work = function(callMe) {
     // handle incoming requests
     this.responder.on('message', function(data) {
         // parse incoming message
-        self.responder.send(callMe(data));
+	callMe(data, function(toSend) {
+	    self.responder.send(toSend);
+        });
     });
 
     // close the responder when the Node process ends
